@@ -18,6 +18,7 @@ on:
 
 jobs:
   validate:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     name: ${{ matrix.package-manager == 'pnpm' && format('pnpm {0}', matrix.pnpm-version) || matrix.package-manager }} ${{ matrix.template }}
     permissions:

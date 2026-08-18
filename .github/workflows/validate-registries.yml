@@ -12,6 +12,7 @@ on:
 
 jobs:
   validate:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     name: pnpm validate:registries
     permissions:

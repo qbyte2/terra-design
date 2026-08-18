@@ -10,6 +10,7 @@ on:
 jobs:
   comment:
     if: |
+      false &&
       github.repository_owner == 'shadcn-ui' &&
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success'

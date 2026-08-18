@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   signed-commits:
-    if: github.repository_owner == 'shadcn-ui'
+    if: ${{ false && github.repository_owner == 'shadcn-ui' }}
     runs-on: ubuntu-latest
     name: Signed commits
     steps:

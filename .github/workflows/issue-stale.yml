@@ -9,7 +9,7 @@ on:
 jobs:
   stale:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'shadcn-ui'
+    if: ${{ false && github.repository_owner == 'shadcn-ui' }}
     steps:
       - uses: actions/stale@v9
         id: issue-stale

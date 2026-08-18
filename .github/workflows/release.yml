@@ -15,7 +15,7 @@ on:
 
 jobs:
   prerelease:
-    if: "${{ github.event_name == 'pull_request' && github.repository_owner == 'shadcn-ui' && (contains(github.event.pull_request.labels.*.name, 'release: beta') || contains(github.event.pull_request.labels.*.name, 'release: rc')) }}"
+    if: "${{ false && github.event_name == 'pull_request' && github.repository_owner == 'shadcn-ui' && (contains(github.event.pull_request.labels.*.name, 'release: beta') || contains(github.event.pull_request.labels.*.name, 'release: rc')) }}"
     name: Publish Prerelease to NPM
     runs-on: ubuntu-latest
     environment: Preview
@@ -118,7 +118,7 @@ jobs:
           path: prerelease-info.json
 
   release:
-    if: ${{ github.event_name == 'push' && github.repository_owner == 'shadcn-ui' }}
+    if: ${{ false && github.event_name == 'push' && github.repository_owner == 'shadcn-ui' }}
     name: Create Version PR or Publish Stable Release
     runs-on: ubuntu-latest
     permissions:
