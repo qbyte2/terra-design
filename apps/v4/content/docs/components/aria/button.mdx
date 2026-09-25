@@ -18,6 +18,7 @@ links:
 <TabsList>
   <TabsTrigger value="cli">Command</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="npm">Package</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -46,6 +47,29 @@ npm install react-aria-components
 />
 
 <Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="npm">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the Terra Design package:</Step>
+
+```bash
+npm install @terra-design/react
+```
+
+<Step>
+  Import the package stylesheet from your Tailwind CSS v4 global stylesheet:
+</Step>
+
+```css title="globals.css"
+@import "tailwindcss";
+@import "@terra-design/react/styles.css";
+```
 
 </Steps>
 

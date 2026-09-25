@@ -1,0 +1,128 @@
+---
+title: Button
+description: Use the Terra Design Button from the npm package.
+featured: true
+base: npm
+component: true
+---
+
+<NpmComponentPreview component="button">
+
+```tsx showLineNumbers title="button-demo.tsx"
+import { Button } from "@terra-design/react"
+
+export function ButtonDemo() {
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      <Button>Default</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="destructive">Destructive</Button>
+    </div>
+  )
+}
+```
+
+</NpmComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="npm">Package</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add button
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install Base UI:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy the Base UI implementation into your project.</Step>
+
+<ComponentSource
+  name="button"
+  title="components/ui/button.tsx"
+  styleName="base-nova"
+/>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="npm">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the package:</Step>
+
+```bash
+npm install @terra-design/react
+```
+
+<Step>Import Terra Design from your Tailwind CSS v4 global stylesheet:</Step>
+
+```css title="globals.css"
+@import "tailwindcss";
+@import "@terra-design/react/styles.css";
+```
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Button } from "@terra-design/react"
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Composition
+
+Terra Design uses Base UI internally. Use the `render` prop when composing the button with another button component.
+
+```tsx
+<Button render={<MyButton />} variant="secondary">
+  Continue
+</Button>
+```
+
+Links should keep link semantics. Apply `buttonVariants` to an anchor instead of rendering an anchor through `Button`.
+
+```tsx
+import { buttonVariants } from "@terra-design/react"
+
+;<a className={buttonVariants({ variant: "link" })} href="/docs">
+  Documentation
+</a>
+```
+
+## API Reference
+
+| Prop       | Type                                                                                 | Default     |
+| ---------- | ------------------------------------------------------------------------------------ | ----------- |
+| `variant`  | `"default" \| "outline" \| "ghost" \| "destructive" \| "secondary" \| "link"`        | `"default"` |
+| `size`     | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"default"` |
+| `disabled` | `boolean`                                                                            | `false`     |
+| `render`   | `ReactElement \| function`                                                           | —           |

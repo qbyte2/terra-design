@@ -14,6 +14,7 @@ import { ComponentsList } from "@/components/components-list"
 import { CopyButton } from "@/components/copy-button"
 import { DirectoryList } from "@/components/directory-list"
 import { getIconForLanguageExtension } from "@/components/icons"
+import { NpmComponentPreview } from "@/components/npm-component-preview"
 import {
   Accordion,
   AccordionContent,
@@ -356,4 +357,5 @@ export const mdxComponents = {
     />
   ),
   Kbd,
+  NpmComponentPreview,
 }

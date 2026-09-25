@@ -4,7 +4,7 @@ import { atomWithStorage } from "jotai/utils"
 type Config = {
   style: "new-york-v4"
   packageManager: "npm" | "yarn" | "pnpm" | "bun"
-  installationType: "cli" | "manual"
+  installationType: "cli" | "manual" | "npm"
 }
 
 const configAtom = atomWithStorage<Config>("config", {

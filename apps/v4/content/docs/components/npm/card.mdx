@@ -1,0 +1,142 @@
+---
+title: Card
+description: Use the Terra Design Card from the npm package.
+base: npm
+component: true
+---
+
+<NpmComponentPreview component="card" previewClassName="min-h-80">
+
+```tsx showLineNumbers title="card-demo.tsx"
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@terra-design/react"
+
+export function CardDemo() {
+  return (
+    <Card className="w-full max-w-sm">
+      <CardHeader>
+        <CardTitle>Terra Design</CardTitle>
+        <CardDescription>
+          This card is rendered from @terra-design/react.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>Base UI foundations with the Nova visual style.</CardContent>
+      <CardFooter>
+        <Button size="sm">Continue</Button>
+      </CardFooter>
+    </Card>
+  )
+}
+```
+
+</NpmComponentPreview>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="npm">Package</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add card
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Copy the Base UI implementation into your project.</Step>
+
+<ComponentSource
+  name="card"
+  title="components/ui/card.tsx"
+  styleName="base-nova"
+/>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="npm">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the package:</Step>
+
+```bash
+npm install @terra-design/react
+```
+
+<Step>Import Terra Design from your Tailwind CSS v4 global stylesheet:</Step>
+
+```css title="globals.css"
+@import "tailwindcss";
+@import "@terra-design/react/styles.css";
+```
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@terra-design/react"
+```
+
+```tsx showLineNumbers
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+    <CardAction>Card Action</CardAction>
+  </CardHeader>
+  <CardContent>Card Content</CardContent>
+  <CardFooter>Card Footer</CardFooter>
+</Card>
+```
+
+## Composition
+
+```text
+Card
+├── CardHeader
+│   ├── CardTitle
+│   ├── CardDescription
+│   └── CardAction
+├── CardContent
+└── CardFooter
+```
+
+## Size
+
+Use `size="sm"` for the compact card spacing.
+
+```tsx
+<Card size="sm">...</Card>
+```
